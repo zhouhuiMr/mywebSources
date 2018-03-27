@@ -1,0 +1,39 @@
+{"frames": {
+
+"bookcase.png":
+{
+	"frame": {"x":0,"y":0,"w":234,"h":679},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":234,"h":679},
+	"sourceSize": {"w":234,"h":679},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"bookrack.png":
+{
+	"frame": {"x":234,"y":0,"w":357,"h":69},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":357,"h":69},
+	"sourceSize": {"w":357,"h":69},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"tvstand.png":
+{
+	"frame": {"x":0,"y":679,"w":742,"h":209},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":742,"h":209},
+	"sourceSize": {"w":742,"h":209},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "furniture.png",
+	"format": "RGBA8888",
+	"size": {"w":742,"h":888},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:7f8763965a5a1110e8942893bb714c44:f5ebfd2e28c3e3645e5c40da9dac61bf:205eea12a903fe13309c00c78692222e$"
+}
+}
