@@ -46,6 +46,7 @@ window.onload = function(){
         console.info("resources loading  is completed");
     }
 
+    var object_bounce = 0;
     var wall = null,
         ground = null;
     var tvstand = null,
@@ -62,22 +63,45 @@ window.onload = function(){
 
         wall = game.add.tileSprite(0,0,wall_width,wall_height,'ground','wall.png');
 
+        //ground
         ground = game.add.tileSprite(0,wall_height,ground_width,ground_height,'ground','ground.png');
         game.physics.enable(ground,Phaser.Physics.ARCADE);
         ground.body.collideWorldBounds = true;
         ground.body.immovable = true;
         ground.body.allowGravity = false;
 
+        //tvstand
         tvstand = game.add.sprite(game.world.centerX,0,'furniture','tvstand.png');
-        tvstand.anchor.set(0.5,0.5);
+        tvstand.anchor.set(0.5,1);
         game.physics.enable(tvstand,Phaser.Physics.ARCADE);
+        tvstand.body.bounce.y = object_bounce;
+
+        //bookcase
+        bookcase = game.add.sprite(game.world.centerX-tvstand.width/2-160,0,'furniture','bookcase.png');
+        bookcase.anchor.set(0.5,1);
+        game.physics.enable(bookcase,Phaser.Physics.ARCADE);
+        bookcase.body.bounce.y = object_bounce;
+        bookcase.body.allowGravity = false;
+
+        //bookrack
+        bookrack = game.add.sprite(game.world.centerX+tvstand.width/2+230,0,'furniture','bookrack.png');
+        bookrack.anchor.set(0.5,1);
+        game.add.tween(bookrack).to({y:300},1000,Phaser.Easing.Quartic.Out,true);
+        game.physics.enable(bookrack,Phaser.Physics.ARCADE);
+        bookrack.body.allowGravity = false;
 
         cursors = game.input.keyboard.createCursorKeys();
     }
 
     //stage  update
     function update(){
-        game.physics.arcade.collide(tvstand, ground);
+        game.physics.arcade.collide(ground, [tvstand,bookcase]);
+
+        if(tvstand.y > 200 && !bookcase.body.allowGravity){
+            bookcase.body.allowGravity = true;
+        }
+
+
         if (cursors.up.isDown)
         {
             game.camera.y -= 4;
@@ -100,6 +124,7 @@ window.onload = function(){
     //stage render
     function render(){
         game.debug.cameraInfo(game.camera, 500, 32);
+        // game.debug.body(tvstand);
     }
 };
 
