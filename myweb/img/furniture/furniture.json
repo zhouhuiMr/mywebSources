@@ -1,7 +1,7 @@
-{"frames": {
+{"frames": [
 
-"bookcase.png":
 {
+	"filename": "bookcase.png",
 	"frame": {"x":0,"y":0,"w":232,"h":674},
 	"rotated": false,
 	"trimmed": false,
@@ -9,8 +9,8 @@
 	"sourceSize": {"w":232,"h":674},
 	"pivot": {"x":0.5,"y":0.5}
 },
-"bookrack.png":
 {
+	"filename": "bookrack.png",
 	"frame": {"x":232,"y":0,"w":357,"h":69},
 	"rotated": false,
 	"trimmed": false,
@@ -18,22 +18,40 @@
 	"sourceSize": {"w":357,"h":69},
 	"pivot": {"x":0.5,"y":0.5}
 },
-"tvstand.png":
 {
-	"frame": {"x":0,"y":674,"w":742,"h":209},
+	"filename": "trophy1.png",
+	"frame": {"x":589,"y":0,"w":99,"h":102},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":742,"h":209},
-	"sourceSize": {"w":742,"h":209},
+	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":102},
+	"sourceSize": {"w":99,"h":102},
 	"pivot": {"x":0.5,"y":0.5}
-}},
+},
+{
+	"filename": "trophy2.png",
+	"frame": {"x":688,"y":0,"w":115,"h":140},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":140},
+	"sourceSize": {"w":115,"h":140},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "tvstand.png",
+	"frame": {"x":0,"y":674,"w":742,"h":207},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":742,"h":207},
+	"sourceSize": {"w":742,"h":207},
+	"pivot": {"x":0.5,"y":0.5}
+}],
 "meta": {
-	"app": "https://www.codeandweb.com/texturepacker",
+	"app": "http://www.codeandweb.com/texturepacker",
 	"version": "1.0",
 	"image": "furniture.png",
 	"format": "RGBA8888",
-	"size": {"w":742,"h":883},
+	"size": {"w":803,"h":881},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:0df06df3ac0be2f56827d4d9bb012437:7d9d9dda300866071e1b376b76cf49d3:205eea12a903fe13309c00c78692222e$"
+	"smartupdate": "$TexturePacker:SmartUpdate:987dbf137cfeb59387e8f1e2d687fdfc:b9b88681d94e26f77c0339da2154f1dc:205eea12a903fe13309c00c78692222e$"
 }
 }

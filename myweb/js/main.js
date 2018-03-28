@@ -15,7 +15,7 @@ window.onload = function(){
 
     var cursors = null;
 
-    var game = new Phaser.Game(GAMEWIDTH, GAMEHEIGHT, Phaser.AUTO, 'stageContainer', {
+    var game = new Phaser.Game(WORLDWIDTH, WORLDHEIGHT, Phaser.AUTO, 'stageContainer', {
         preload: preload,
         create: create,
         update: update,
@@ -51,7 +51,9 @@ window.onload = function(){
         ground = null;
     var tvstand = null,
         bookcase = null,
-        bookrack = null;
+        bookrack = null,
+        trophy1 = null,
+        trophy2 = null;
 
     //create object
     function create(){
@@ -60,6 +62,7 @@ window.onload = function(){
 
         game.world.setBounds(0, 0, WORLDWIDTH, WORLDHEIGHT);
         game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+        game.camera.setPosition(game.world.centerX,game.world.centerY);
 
         wall = game.add.tileSprite(0,0,wall_width,wall_height,'ground','wall.png');
 
@@ -88,7 +91,19 @@ window.onload = function(){
         bookrack.anchor.set(0.5,1);
         game.add.tween(bookrack).to({y:300},1000,Phaser.Easing.Quartic.Out,true);
         game.physics.enable(bookrack,Phaser.Physics.ARCADE);
+        bookrack.body.immovable = true;
         bookrack.body.allowGravity = false;
+
+        trophy1 = game.add.sprite(bookrack.x+130,0,'furniture','trophy1.png');
+        trophy1.anchor.set(0.5,1);
+        game.physics.enable(trophy1,Phaser.Physics.ARCADE);
+        trophy1.body.bounce.y = 0.3;
+        trophy1.body.allowGravity = false;
+
+        trophy2 = game.add.sprite(bookrack.x+20,0,'furniture','trophy2.png');
+        trophy2.anchor.set(0.5,1);
+        game.physics.enable(trophy2,Phaser.Physics.ARCADE);
+        trophy2.body.bounce.y = 0.3;
 
         cursors = game.input.keyboard.createCursorKeys();
     }
@@ -97,8 +112,14 @@ window.onload = function(){
     function update(){
         game.physics.arcade.collide(ground, [tvstand,bookcase]);
 
+        game.physics.arcade.collide(bookrack, [trophy1,trophy2]);
+
         if(tvstand.y > 200 && !bookcase.body.allowGravity){
             bookcase.body.allowGravity = true;
+        }
+
+        if(trophy2.y > 50 && !trophy1.body.allowGravity){
+            trophy1.body.allowGravity = true;
         }
 
 
@@ -123,7 +144,7 @@ window.onload = function(){
 
     //stage render
     function render(){
-        game.debug.cameraInfo(game.camera, 500, 32);
+        //game.debug.cameraInfo(game.camera, 500, 32);
         // game.debug.body(tvstand);
     }
 };
