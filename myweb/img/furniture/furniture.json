@@ -1,57 +1,93 @@
-{"frames": [
+{"frames": {
 
+"bag.png":
 {
-	"filename": "bookcase.png",
-	"frame": {"x":0,"y":0,"w":232,"h":674},
+	"frame": {"x":0,"y":140,"w":139,"h":200},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":232,"h":674},
-	"sourceSize": {"w":232,"h":674},
+	"spriteSourceSize": {"x":0,"y":0,"w":139,"h":200},
+	"sourceSize": {"w":139,"h":200},
 	"pivot": {"x":0.5,"y":0.5}
 },
+"bookcase.png":
 {
-	"filename": "bookrack.png",
-	"frame": {"x":232,"y":0,"w":357,"h":69},
+	"frame": {"x":0,"y":561,"w":239,"h":673},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":239,"h":673},
+	"sourceSize": {"w":239,"h":673},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"bookrack.png":
+{
+	"frame": {"x":416,"y":0,"w":357,"h":69},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":357,"h":69},
 	"sourceSize": {"w":357,"h":69},
 	"pivot": {"x":0.5,"y":0.5}
 },
+"gamebox.png":
 {
-	"filename": "trophy1.png",
-	"frame": {"x":589,"y":0,"w":99,"h":102},
+	"frame": {"x":0,"y":0,"w":198,"h":39},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":198,"h":39},
+	"sourceSize": {"w":198,"h":39},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"screen1.png":
+{
+	"frame": {"x":139,"y":140,"w":464,"h":216},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":464,"h":216},
+	"sourceSize": {"w":464,"h":216},
+	"pivot": {"x":0.5,"y":0.5}
+},
+"trophy1.png":
+{
+	"frame": {"x":198,"y":0,"w":99,"h":102},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":102},
 	"sourceSize": {"w":99,"h":102},
 	"pivot": {"x":0.5,"y":0.5}
 },
+"trophy2.png":
 {
-	"filename": "trophy2.png",
-	"frame": {"x":688,"y":0,"w":115,"h":140},
+	"frame": {"x":297,"y":0,"w":119,"h":140},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":115,"h":140},
-	"sourceSize": {"w":115,"h":140},
+	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":140},
+	"sourceSize": {"w":119,"h":140},
 	"pivot": {"x":0.5,"y":0.5}
 },
+"tv.png":
 {
-	"filename": "tvstand.png",
-	"frame": {"x":0,"y":674,"w":742,"h":207},
+	"frame": {"x":239,"y":561,"w":540,"h":320},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":742,"h":207},
-	"sourceSize": {"w":742,"h":207},
+	"spriteSourceSize": {"x":0,"y":0,"w":540,"h":320},
+	"sourceSize": {"w":540,"h":320},
 	"pivot": {"x":0.5,"y":0.5}
-}],
+},
+"tvstand.png":
+{
+	"frame": {"x":0,"y":356,"w":748,"h":205},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":748,"h":205},
+	"sourceSize": {"w":748,"h":205},
+	"pivot": {"x":0.5,"y":0.5}
+}},
 "meta": {
-	"app": "http://www.codeandweb.com/texturepacker",
+	"app": "https://www.codeandweb.com/texturepacker",
 	"version": "1.0",
 	"image": "furniture.png",
 	"format": "RGBA8888",
-	"size": {"w":803,"h":881},
+	"size": {"w":779,"h":1234},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:987dbf137cfeb59387e8f1e2d687fdfc:b9b88681d94e26f77c0339da2154f1dc:205eea12a903fe13309c00c78692222e$"
+	"smartupdate": "$TexturePacker:SmartUpdate:c09b2e5aeda019ee631da3ec272d6b68:9e0db443988163728eb105609db9748d:205eea12a903fe13309c00c78692222e$"
 }
 }

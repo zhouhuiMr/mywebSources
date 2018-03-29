@@ -53,7 +53,9 @@ window.onload = function(){
         bookcase = null,
         bookrack = null,
         trophy1 = null,
-        trophy2 = null;
+        trophy2 = null,
+        tv = null,
+        bag = null;
 
     //create object
     function create(){
@@ -66,18 +68,17 @@ window.onload = function(){
 
         wall = game.add.tileSprite(0,0,wall_width,wall_height,'ground','wall.png');
 
-        //ground
-        ground = game.add.tileSprite(0,wall_height,ground_width,ground_height,'ground','ground.png');
-        game.physics.enable(ground,Phaser.Physics.ARCADE);
-        ground.body.collideWorldBounds = true;
-        ground.body.immovable = true;
-        ground.body.allowGravity = false;
-
         //tvstand
         tvstand = game.add.sprite(game.world.centerX,0,'furniture','tvstand.png');
         tvstand.anchor.set(0.5,1);
         game.physics.enable(tvstand,Phaser.Physics.ARCADE);
         tvstand.body.bounce.y = object_bounce;
+
+        //tv
+        tv = game.add.sprite(game.world.centerX,-500,'furniture','tv.png');
+        tv.anchor.set(0.5,1);
+        game.physics.enable(tv,Phaser.Physics.ARCADE);
+        tv.body.bounce.y = 0.2;
 
         //bookcase
         bookcase = game.add.sprite(game.world.centerX-tvstand.width/2-160,0,'furniture','bookcase.png');
@@ -105,14 +106,33 @@ window.onload = function(){
         game.physics.enable(trophy2,Phaser.Physics.ARCADE);
         trophy2.body.bounce.y = 0.3;
 
+        bag = game.add.sprite(WORLDWIDTH-200,0,'furniture','bag.png');
+        bag.anchor.set(0.5,1);
+        game.physics.enable(bag,Phaser.Physics.ARCADE);
+        bag.body.bounce.y = 0.3;
+
+        //ground
+        ground = game.add.tileSprite(0,wall_height,ground_width,ground_height,'ground','ground.png');
+        game.physics.enable(ground,Phaser.Physics.ARCADE);
+        ground.body.collideWorldBounds = true;
+        ground.body.immovable = true;
+        ground.body.allowGravity = false;
+
         cursors = game.input.keyboard.createCursorKeys();
     }
 
     //stage  update
     function update(){
-        game.physics.arcade.collide(ground, [tvstand,bookcase]);
+        game.physics.arcade.collide(ground, [tvstand,bookcase,bag],function(obj1,obj2){
+            if(obj2 == tvstand){
+                tvstand.body.immovable = true;
+                tvstand.body.allowGravity = false;
+            }
+        });
 
         game.physics.arcade.collide(bookrack, [trophy1,trophy2]);
+
+        game.physics.arcade.collide(tvstand, tv);
 
         if(tvstand.y > 200 && !bookcase.body.allowGravity){
             bookcase.body.allowGravity = true;
