@@ -35,6 +35,7 @@ window.onload = function(){
         game.load.onLoadComplete.add(loadcomplete, this);
         game.load.atlas('ground','img/ground/ground.png','img/ground/ground.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
         game.load.atlas('furniture','img/furniture/furniture.png','img/furniture/furniture.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
+        game.load.atlas('pointing','img/pointing/pointing.png','img/pointing/pointing.json', Phaser.Loader.TEXTURE_ATLAS_JSON_HASH);
     }
     function loadStart(){
         console.info("resources loading  starts");
@@ -55,7 +56,9 @@ window.onload = function(){
         trophy1 = null,
         trophy2 = null,
         tv = null,
-        bag = null;
+        bag = null,
+        gamebox = null;
+    var hand = null;
 
     //create object
     function create(){
@@ -78,7 +81,13 @@ window.onload = function(){
         tv = game.add.sprite(game.world.centerX,-500,'furniture','tv.png');
         tv.anchor.set(0.5,1);
         game.physics.enable(tv,Phaser.Physics.ARCADE);
-        tv.body.bounce.y = 0.2;
+        tv.body.bounce.y = 0.3;
+
+        //gamebox
+        gamebox = game.add.sprite(game.world.centerX-220,wall_height-145,'furniture','gamebox.png');
+        gamebox.anchor.set(0.5,0.5);
+        gamebox.scale.set(4,4);
+        gamebox.alpha = 0.0;
 
         //bookcase
         bookcase = game.add.sprite(game.world.centerX-tvstand.width/2-160,0,'furniture','bookcase.png');
@@ -95,17 +104,20 @@ window.onload = function(){
         bookrack.body.immovable = true;
         bookrack.body.allowGravity = false;
 
+        //trophy1
         trophy1 = game.add.sprite(bookrack.x+130,0,'furniture','trophy1.png');
         trophy1.anchor.set(0.5,1);
         game.physics.enable(trophy1,Phaser.Physics.ARCADE);
         trophy1.body.bounce.y = 0.3;
         trophy1.body.allowGravity = false;
 
+        //trophy2
         trophy2 = game.add.sprite(bookrack.x+20,0,'furniture','trophy2.png');
         trophy2.anchor.set(0.5,1);
         game.physics.enable(trophy2,Phaser.Physics.ARCADE);
         trophy2.body.bounce.y = 0.3;
 
+        //bag
         bag = game.add.sprite(WORLDWIDTH-200,0,'furniture','bag.png');
         bag.anchor.set(0.5,1);
         game.physics.enable(bag,Phaser.Physics.ARCADE);
@@ -118,21 +130,42 @@ window.onload = function(){
         ground.body.immovable = true;
         ground.body.allowGravity = false;
 
+        //hand
+        hand = game.add.sprite(0,wall_height,'pointing','hand.png');
+        hand.anchor.set(0.5,0);
+
         cursors = game.input.keyboard.createCursorKeys();
     }
 
     //stage  update
     function update(){
+        if(game.device.touch){
+            hand.x = game.input.pointer1.x;
+            hand.y = game.input.pointer1.y;
+        }else{
+            hand.x = game.input.mousePointer.x;
+            hand.y = game.input.mousePointer.y;
+        }
+
         game.physics.arcade.collide(ground, [tvstand,bookcase,bag],function(obj1,obj2){
             if(obj2 == tvstand){
                 tvstand.body.immovable = true;
                 tvstand.body.allowGravity = false;
+                tvstand.body.velocity.y = 0;
+
+                game.add.tween(gamebox).to( { alpha: 1}, 1000, Phaser.Easing.Quartic.Out, true);
+                game.add.tween(gamebox.scale).to( {x:1,y:1}, 1000, Phaser.Easing.Quartic.Out, true);
             }
         });
-
         game.physics.arcade.collide(bookrack, [trophy1,trophy2]);
 
-        game.physics.arcade.collide(tvstand, tv);
+        game.physics.arcade.collide(tvstand, tv,function(obj1,obj2){
+            if(obj2.body.position.y == obj2.body.prev.y){
+                tv.body.immovable = true;
+                tv.body.allowGravity = false;
+                tv.body.velocity.y = 0;
+            }
+        });
 
         if(tvstand.y > 200 && !bookcase.body.allowGravity){
             bookcase.body.allowGravity = true;
@@ -166,6 +199,7 @@ window.onload = function(){
     function render(){
         //game.debug.cameraInfo(game.camera, 500, 32);
         // game.debug.body(tvstand);
+        // game.debug.pointer(game.input.pointer1);
     }
 };
 

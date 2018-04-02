@@ -1,0 +1,21 @@
+{"frames": {
+
+"hand.png":
+{
+	"frame": {"x":0,"y":0,"w":130,"h":165},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":130,"h":165},
+	"sourceSize": {"w":130,"h":165},
+	"pivot": {"x":0.5,"y":0.5}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pointing.png",
+	"format": "RGBA8888",
+	"size": {"w":130,"h":165},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:4cb8502a7cf190880a2db333f0b15048:f5f00a781f250459029ca2fb93f4d7bb:d46d42e90a777d99cf35cc71dbeeca08$"
+}
+}

@@ -11,7 +11,7 @@
 },
 "bookcase.png":
 {
-	"frame": {"x":0,"y":561,"w":239,"h":673},
+	"frame": {"x":543,"y":345,"w":239,"h":673},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":239,"h":673},
@@ -20,7 +20,7 @@
 },
 "bookrack.png":
 {
-	"frame": {"x":416,"y":0,"w":357,"h":69},
+	"frame": {"x":198,"y":0,"w":357,"h":69},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":357,"h":69},
@@ -36,18 +36,9 @@
 	"sourceSize": {"w":198,"h":39},
 	"pivot": {"x":0.5,"y":0.5}
 },
-"screen1.png":
-{
-	"frame": {"x":139,"y":140,"w":464,"h":216},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":464,"h":216},
-	"sourceSize": {"w":464,"h":216},
-	"pivot": {"x":0.5,"y":0.5}
-},
 "trophy1.png":
 {
-	"frame": {"x":198,"y":0,"w":99,"h":102},
+	"frame": {"x":555,"y":0,"w":99,"h":102},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":99,"h":102},
@@ -56,7 +47,7 @@
 },
 "trophy2.png":
 {
-	"frame": {"x":297,"y":0,"w":119,"h":140},
+	"frame": {"x":654,"y":0,"w":119,"h":140},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":119,"h":140},
@@ -65,16 +56,16 @@
 },
 "tv.png":
 {
-	"frame": {"x":239,"y":561,"w":540,"h":320},
+	"frame": {"x":0,"y":345,"w":543,"h":319},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":540,"h":320},
-	"sourceSize": {"w":540,"h":320},
+	"spriteSourceSize": {"x":0,"y":0,"w":543,"h":319},
+	"sourceSize": {"w":543,"h":319},
 	"pivot": {"x":0.5,"y":0.5}
 },
 "tvstand.png":
 {
-	"frame": {"x":0,"y":356,"w":748,"h":205},
+	"frame": {"x":139,"y":140,"w":748,"h":205},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":748,"h":205},
@@ -86,8 +77,8 @@
 	"version": "1.0",
 	"image": "furniture.png",
 	"format": "RGBA8888",
-	"size": {"w":779,"h":1234},
+	"size": {"w":887,"h":1018},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:c09b2e5aeda019ee631da3ec272d6b68:9e0db443988163728eb105609db9748d:205eea12a903fe13309c00c78692222e$"
+	"smartupdate": "$TexturePacker:SmartUpdate:dbc1f5d204025986d3bc3bcd44668af8:d292ac710b95f7847b37165200902988:205eea12a903fe13309c00c78692222e$"
 }
 }
